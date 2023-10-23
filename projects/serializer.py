@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from projects.models import Profile
+from projects.models import Profile, Project
 
 
 class ProfileReadOnlySerializer(serializers.ModelSerializer):
@@ -16,7 +16,13 @@ class ProfileWriteSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
-class ProfileByIdSerializer(serializers.ModelSerializer):
+class ProjectReadOnlySerializer(serializers.ModelSerializer):
     class Meta:
-        model = Profile
+        model = Project
+        fields = "__all__"
+
+
+class ProjectWriteSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Project
         fields = "__all__"
