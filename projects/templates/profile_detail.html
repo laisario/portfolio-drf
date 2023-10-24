@@ -8,17 +8,39 @@
 </head>
 
 <body>
-  <p>{{ profile.name }}</p>
-  <p>{{ profile.github }}</p>
-  <p>{{ profile.linkedin }}</p>
-  <p>{{ profile.bio }}</p>
-  {% for project in profile.projects.all %}
-  <p>{{project.name}}</p>
-  <p>{{project.description}}</p>
-  <p>{{project.github_url}}</p>
-  <p>{{project.keyword}}</p>
-  <p>{{project.key_skill}}</p>
-  {% endfor %}
+  <div>
+    <h1>Perfil de:{{ profile.name }}</h1>
+    <h3>Github: {{ profile.github }}</h3>
+    <h3>Linkedin: {{ profile.linkedin }}</h3>
+    <h3>Bio: {{ profile.bio }}</h3>
+  </div>
+  <div>
+    <h2>Projetos</h2>
+    {% for project in profile.projects.all %}
+    <div>
+      <p>{{project.name}}</p>
+      <p>{{project.description}}</p>
+      <p>{{project.github_url}}</p>
+      <p>{{project.keyword}}</p>
+      <p>{{project.key_skill}}</p>
+    </div>
+    {% endfor %}
+  </div>
+  <div>
+    <h2>Certificados</h2>
+    {% for certificate in profile.certificates.all %}
+    <p>{{certificate.name}}</p>
+    <p>{{certificate.certifying_institution.name}}</p>
+    {% endfor %}
+  </div>
+  <ul>
+    {% for institution in profile.certifying_institutions.all %}
+    <li>
+      {{ institution.name }}
+      {{ institution.url }}
+    </li>
+    {% endfor %}
+  </ul>
 </body>
 
 </html>
