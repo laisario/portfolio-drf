@@ -34,7 +34,7 @@
     {% endfor %}
   </div>
   <ul>
-    {% for institution in profile.certifying_institutions.all %}
+    {% for institution in profile.certificates.all %}
     <li>
       {{ institution.name }}
       {{ institution.url }}

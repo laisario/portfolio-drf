@@ -32,9 +32,6 @@ class ProfileViewSet(viewsets.ModelViewSet):
     def retrieve(self, request, *args, **kwargs):
         if request.method == "GET":
             profile = get_object_or_404(Profile, pk=kwargs.get("pk"))
-            # kwargs.get("pk")
-            # profile = self.get_object()
-            print('>>>>>>>>>>>', profile, '<<<<<<<<<<<<<<<<<<<<<')
             return render(request, "profile_detail.html", {"profile": profile})
         return super().retrieve(request, *args, **kwargs)
 

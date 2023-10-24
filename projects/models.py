@@ -18,7 +18,7 @@ class Project(models.Model):
     keyword = models.TextField(max_length=50)
     key_skill = models.TextField(max_length=50)
     profile = models.ForeignKey(
-        Profile, on_delete=models.CASCADE, related_name="Projects"
+        Profile, on_delete=models.CASCADE, related_name="projects"
     )
 
     def _str_(self) -> str:
