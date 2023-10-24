@@ -33,14 +33,14 @@
     <p>{{certificate.certifying_institution.name}}</p>
     {% endfor %}
   </div>
-  <ul>
+  <div>
     {% for institution in profile.certificates.all %}
-    <li>
+    <p>
       {{ institution.name }}
       {{ institution.url }}
-    </li>
+    </p>
     {% endfor %}
-  </ul>
+  </div>
 </body>
 
 </html>
